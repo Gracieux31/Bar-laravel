@@ -1,6 +1,6 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\management\categoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +16,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/management', function () {
+    return view('management.index');
+});
+
+
+
+// Route::resource('/management/category',[\App\Http\Controllers\management\categoryController ::class, 'createCategory']);
+Route::resource('/management/category',"\App\Http\Controllers\management\categoryController");
+
 
 Auth::routes();
 
