@@ -16,23 +16,18 @@ use App\Http\Controllers\management\categoryController;
 Route::get('/', function () {
     return view('welcome');
 });
-
-<<<<<<< HEAD
+// Route::get('/management', function () {
+//     return view('management.index');
+// });
 Route::get('ListFruit', function () {
     return view('ListFruit');
 });
-=======
-Route::get('/management', function () {
-    return view('management.index');
-});
 
 
+// // Route::resource('/management/category',[\App\Http\Controllers\management\categoryController ::class, 'createCategory']);
+// Route::resource('/management/category',"\App\Http\Controllers\management\categoryController");
 
-// Route::resource('/management/category',[\App\Http\Controllers\management\categoryController ::class, 'createCategory']);
-Route::resource('/management/category',"\App\Http\Controllers\management\categoryController");
 
+// Auth::routes();
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
->>>>>>> origin/Gracieux
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
