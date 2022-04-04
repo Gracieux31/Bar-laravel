@@ -1,6 +1,6 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\management\categoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +17,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+<<<<<<< HEAD
 Route::get('ListFruit', function () {
     return view('ListFruit');
 });
+=======
+Route::get('/management', function () {
+    return view('management.index');
+});
+
+
+
+// Route::resource('/management/category',[\App\Http\Controllers\management\categoryController ::class, 'createCategory']);
+Route::resource('/management/category',"\App\Http\Controllers\management\categoryController");
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+>>>>>>> origin/Gracieux
