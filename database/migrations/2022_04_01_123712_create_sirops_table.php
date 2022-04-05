@@ -15,6 +15,7 @@ class CreateSiropsTable extends Migration
     {
         Schema::create('sirops', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->timestamps();
         });
     }

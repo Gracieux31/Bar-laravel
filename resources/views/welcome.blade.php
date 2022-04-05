@@ -9,6 +9,6 @@
     <body>
         <h1>Bonjour !</h1>
         <h2>Catégories</h2>
-        <a href="{{ route('categories.show')  }}">Voir les catégories</a>
+        <a href="{{ route('sirops.show')  }}">Voir les catégories</a>
     </body>
 </html>
