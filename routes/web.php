@@ -26,6 +26,7 @@ Route::get('/management', function () {
 // Route::resource('/management/category',[\App\Http\Controllers\management\categoryController ::class, 'createCategory']);
 Route::resource('/management/category',"\App\Http\Controllers\management\categoryController");
 
+Route::resource('/management/menu',"\App\Http\Controllers\management\menuController");
 
 Auth::routes();
 

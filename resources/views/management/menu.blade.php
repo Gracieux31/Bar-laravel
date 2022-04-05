@@ -13,8 +13,8 @@
             <div class="col-10">
                 <div class="card">
                     <div class="card-header">
-                        <h6>Create Category</h6>
-                        <a href="/management/category/create" class='btn btn-primary float-end'>Création de catégories</a>
+                        <h6>Create Menu</h6>
+                        <a href="/management/category/create" class='btn btn-primary float-end'>Création de Menu</a>
                          
                     </div> 
 
@@ -37,26 +37,11 @@
                                     </tr>
                                 </thead> 
                                 <tbody>
-                                    @foreach($categories as $cat)
-                                     <tr>
-                                         <td>{{$cat->id }}</td>
-                                         <td>{{$cat->name }}</td>
-                                         <td><a href="/management/category/{{$cat->id }}/edit" class="btn btn-warning">Edit</a></td>
-                                         
-                                         <td>
-                                            <form action="/management/category/{{$cat->id }}" method="POST">
-                                                @csrf
-                                                @method('DELETE')
-                                                 <input type="submit" class='btn btn-danger'value='Delete'/>
-                                             </form>
-                                        </td>
-                                     </tr>
-
-                                    @endforeach
+                                 
                                 </tbody>
                                  
                             </table>
-                            {{ $categories->links() }}
+                            {{-- {{ $categories->links() }} --}}
                     </div>
                     
                     <div class="card-footer">
