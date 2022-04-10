@@ -5,13 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ListFruitTable extends Model
+class FruitTable extends Model
 {
     use HasFactory;
-    protected $table= 'list_fruit_tables';
+    protected $table= 'fruit_table';
     protected $fillable = [
-        'name',
-        'type',
+        'name', 
         'fruit_image',
     ];
 }
