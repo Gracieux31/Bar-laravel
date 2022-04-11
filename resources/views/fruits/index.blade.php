@@ -8,7 +8,7 @@
 			<div class="card">
 				<div class="card-header">
 					<h4> Fruits pour cocktails
-						<a href="{{ url{'add-fruits'} }}" class="btn btn-primary float-end">Add Fruits</a>
+						<a href="{{ url('add-fruit') }}" class="btn btn-primary float-end">Add Fruits</a>
 					</h4>
 				</div>
 				<div class="card-body">
@@ -19,7 +19,7 @@
 								<th>ID</th>
 								<th>Name</th>
 								<th>Image</th>
-								<th>Edit</th>
+								
 								<th>Delete</th>
 							</tr>
 						</thead>
@@ -30,11 +30,11 @@
 								<td>{{ $item->name }}</td>
 								
 								<td>
-									<img src="{{ asset('uploads/fruits/'.$item->profile_image) }}" width="70px" height="70px" alt="Image">
+									<img src="{{ asset('uploads/fruits/'.$item->fruit_image) }}" width="70px" height="70px" alt="Image">
 								</td>
-								<td>
+								{{-- <td>
 									<a href="{{ url('edit-fruit/'.$item->id) }}" class="btn btn-primary btn-sm">Edit</a>
-								</td>
+								</td> --}}
 								<td>
 									{{-- <a href="{{ url('delete-fruit/'.$item->id) }}" class="btn btn-danger btn-sm">Delete</a> --}}
 									<form action="{{ url('delete-fruit/'.$item->id) }}" method="POST">

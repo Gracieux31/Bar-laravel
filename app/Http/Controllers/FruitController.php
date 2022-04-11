@@ -5,12 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Fruit;
 use Illuminate\Support\Facades\File;
+use Illuminate\Http\UploadedFile;
+
 
 class FruitController extends Controller
 {
     public function index()
     {
-        return view('fruits.index');
+        $fruit = Fruit::all();
+        return view('fruits.index', compact('fruit'));
     }
 
     public function create()
@@ -26,7 +29,7 @@ class FruitController extends Controller
         if($request->hasfile('fruit_image'))
         {
             $file = $request->file('fruit_image');
-            $extension = $file->getClientOriginaleExtension();
+            $extension = $file->getClientOriginalExtension();
             $filename = time().'.'.$extension;
             $file->move('uploads/fruits/', $filename);
             $fruit->fruit_image = $filename;
@@ -34,35 +37,6 @@ class FruitController extends Controller
 
         $fruit->save();
         return redirect()->back()->with('status','Successfully added');
-    }
-
-     public function edit($id)
-    {
-        $fruit = Fruit::find($id);
-        return view('fruits.edit', compact('fruits'));
-    }
-
-    public function update(Request $request, $id)
-    {
-        $fruit = Fruit::find($id);
-        $fruit->name = $request->input('name');
-  
-        if($request->hasfile('fruit_image'))
-        {
-            $destination = 'uploads/fruits/'.$fruit->fruit_image;
-            if(File::exists($destination))
-            {
-                File::delete($destination);
-            }
-            $file = $request->file('fruit_image');
-            $extention = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extention;
-            $file->move('uploads/fruits/', $filename);
-            $fruit->fruit_image = $filename;
-        }
-
-        $fruit->update();
-        return redirect()->back()->with('status','Student Image Updated Successfully');
     }
 
     public function destroy($id)
@@ -74,7 +48,7 @@ class FruitController extends Controller
             File::delete($destination);
         }
         $fruit->delete();
-        return redirect()->back()->with('status','Student Image Deleted Successfully');
+        return redirect()->back()->with('status','Successfully Added');
     }
 }
 

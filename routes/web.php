@@ -23,7 +23,7 @@ Route::get('/', function () {
 
 Route::get('fruits', [FruitController::class, 'index']);
 Route::get('add-fruit', [FruitController::class, 'create']);
-Route::post('add-image', [FruitController::class, 'stockage']);
+Route::post('add-fruit', [FruitController::class, 'stockage']);
 Route::get('edit-student/{id}', [FruitController::class, 'edit']);
 Route::put('update-fruit/{id}', [FruitController::class, 'update']);
 Route::delete('delete-fruit/{id}', [FruitController::class, 'destroy']);

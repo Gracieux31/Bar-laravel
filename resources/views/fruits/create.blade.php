@@ -13,12 +13,12 @@
 			<div class="card">
 				<div class="card-header">
 					<h4> Ajouter des fruits
-					<a href="(( url('fruits') ))" class="btn btn-primary float-end">retour</a>
+					<a href="{{ url('fruits') }}" class="btn btn-primary float-end">retour</a>
 					</h4>
 				</div>
 				<div class="card-body">
 				
-					<form action="(( url('add-fruits') ))" method="POST" enctype="multipart/form-data">
+					<form action="{{ url('add-fruit') }}" method="POST" enctype="multipart/form-data">
 						@csrf
 
 						<div class="form-groupe mb-3">
