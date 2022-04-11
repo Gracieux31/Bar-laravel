@@ -17,26 +17,22 @@ use App\Http\Controllers\FruitController;
 Route::get('/', function () {
     return view('welcome');
 });
-// Route::get('/management', function () {
-//     return view('management.index');
-// });
+Route::get('/management', function () {
+    return view('management.index');
+});
 
 Route::get('fruits', [FruitController::class, 'index']);
 Route::get('add-fruit', [FruitController::class, 'create']);
 Route::post('add-fruit', [FruitController::class, 'stockage']);
-Route::get('edit-student/{id}', [FruitController::class, 'edit']);
-Route::put('update-fruit/{id}', [FruitController::class, 'update']);
 Route::delete('delete-fruit/{id}', [FruitController::class, 'destroy']);
 // Route::get('fruits', 'FruitController@index');
 // Route::get('fruits', 'FruitController@stockage')->name('fruits.stockage');
 
+// Route::resource('/management/category',[\App\Http\Controllers\management\categoryController ::class, 'createCategory']);
+Route::resource('/management/category',"\App\Http\Controllers\management\categoryController");
 
-
-
-// // Route::resource('/management/category',[\App\Http\Controllers\management\categoryController ::class, 'createCategory']);
-// Route::resource('/management/category',"\App\Http\Controllers\management\categoryController");
-
+Route::resource('/management/menu',"\App\Http\Controllers\management\menuController");
 
 // Auth::routes();
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
