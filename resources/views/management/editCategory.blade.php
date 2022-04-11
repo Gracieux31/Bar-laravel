@@ -25,11 +25,12 @@
                         
                         @endforeach
 
-                        <form action="/management/category" method='POST'>
+                        <form action="/management/category/{{$category_edit->id}}" method='POST'>
                             @csrf
-                            <label for="">Nouveau Catégories</label>
-                            <input type="text" class='form-control' name='cat'>
-                            <input type="submit" class="btn btn-danger">
+                            @method('PUT')
+                            <label for="">Editer la Catégories</label>
+                            <input type="text" class='form-control' value='{{$category_edit->name}}' name='cat'>
+                            <input type="submit" class="btn btn-danger" value="update">
                         </form>
 
                     </div>
