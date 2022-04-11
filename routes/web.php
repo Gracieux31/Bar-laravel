@@ -1,7 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\management\categoryController;
-use App\Http\Controllers\FruitListController;
+use App\Http\Controllers\FruitController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,14 +21,14 @@ Route::get('/', function () {
 //     return view('management.index');
 // });
 
-//Liste fruit
-Route::get('ListFruit', function () {
-    return view('ListFruit');
-});
-
-Route::get('ListFruit', [FruitList::class, 'index']);
-Route::get('add-fruit', [FruitList::class, 'creation']);
-Route::post('add-fruit',[FruitList::class, 'stockage']);
+Route::get('fruits', [FruitController::class, 'index']);
+Route::get('add-fruit', [FruitController::class, 'create']);
+Route::post('add-fruit', [FruitController::class, 'stockage']);
+Route::get('edit-student/{id}', [FruitController::class, 'edit']);
+Route::put('update-fruit/{id}', [FruitController::class, 'update']);
+Route::delete('delete-fruit/{id}', [FruitController::class, 'destroy']);
+// Route::get('fruits', 'FruitController@index');
+// Route::get('fruits', 'FruitController@stockage')->name('fruits.stockage');
 
 
 
