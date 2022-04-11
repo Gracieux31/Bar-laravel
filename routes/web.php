@@ -3,6 +3,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\management\categoryController;
 use App\Http\Controllers\FruitController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
