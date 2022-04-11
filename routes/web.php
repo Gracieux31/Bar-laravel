@@ -19,24 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-<<<<<<< HEAD
 Route::get(
     'sirops',
     [SiropsController::class, 'index']
 )->name('sirops.show');
-=======
-Route::get('/management', function () {
-    return view('management.index');
-});
-
-
-
-// Route::resource('/management/category',[\App\Http\Controllers\management\categoryController ::class, 'createCategory']);
-Route::resource('/management/category',"\App\Http\Controllers\management\categoryController");
-
-Route::resource('/management/menu',"\App\Http\Controllers\management\menuController");
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
->>>>>>> 3f843658fb84f033b14f912b3959d4e7cbd42444
