@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Fruit;
 use Illuminate\Support\Facades\File;
-use Illuminate\Http\UploadedFile;
+
 
 
 class FruitController extends Controller
@@ -37,6 +37,35 @@ class FruitController extends Controller
 
         $fruit->save();
         return redirect()->back()->with('status','Successfully added');
+    }
+
+    public function edit($id)
+    {
+        $fruit = Fruit::find($id);
+        return view('fruits.edit', compact('fruit'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $fruit = Fruit::find($id);
+        $fruit->name = $request->input('name');
+
+        if($request->hasfile('fruit_image'))
+        {
+            $destination = 'uploads/fruits/'.$fruit->fruit_image;
+            if(File::exists($destination))
+            {
+                File::delete($destination);
+            }
+            $file = $request->file('fruit_image');
+            $extention = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extention;
+            $file->move('uploads/fruits/', $filename);
+            $fruit->fruit_image = $filename;
+        }
+
+        $fruit->update();
+        return redirect()->back()->with('status','Fruit Image Updated Successfully');
     }
 
     public function destroy($id)

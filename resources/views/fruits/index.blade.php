@@ -19,7 +19,7 @@
 								<th>ID</th>
 								<th>Name</th>
 								<th>Image</th>
-								
+								<th>Edit</th>
 								<th>Delete</th>
 							</tr>
 						</thead>
@@ -32,11 +32,10 @@
 								<td>
 									<img src="{{ asset('uploads/fruits/'.$item->fruit_image) }}" width="70px" height="70px" alt="Image">
 								</td>
-								{{-- <td>
-									<a href="{{ url('edit-fruit/'.$item->id) }}" class="btn btn-primary btn-sm">Edit</a>
-								</td> --}}
 								<td>
-									{{-- <a href="{{ url('delete-fruit/'.$item->id) }}" class="btn btn-danger btn-sm">Delete</a> --}}
+									<a href="{{ url('edit-fruit/'.$item->id) }}" class="btn btn-primary btn-sm">Edit</a>
+								</td>
+								<td>
 									<form action="{{ url('delete-fruit/'.$item->id) }}" method="POST">
 										@csrf
 										@method('DELETE')
