@@ -32,7 +32,6 @@
 						<div class="form-groupe mb-3">
 							<button type="submit" class="btn btn-primary">Save Fruits</button>
 						</div>
-						
 					</form>
 				</div>
 			</div>
