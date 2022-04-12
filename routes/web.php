@@ -1,8 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\management\categoryController;
-
-use App\Http\Controllers\SiropsController;
+use App\Http\Controllers\FruitController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,8 +17,26 @@ use App\Http\Controllers\SiropsController;
 Route::get('/', function () {
     return view('welcome');
 });
+// Route::get('/management', function () {
+//     return view('management.index');
+// });
 
-Route::get(
-    'sirops',
-    [SiropsController::class, 'index']
-)->name('sirops.show');
+Route::get('sirops', [FruitController::class, 'index']);
+Route::get('add-fruit', [FruitController::class, 'create']);
+Route::post('add-fruit', [FruitController::class, 'stockage']);
+Route::get('edit-student/{id}', [FruitController::class, 'edit']);
+Route::put('update-sirop/{id}', [FruitController::class, 'update']);
+Route::delete('delete-sirop/{id}', [FruitController::class, 'destroy']);
+// Route::get('sirops', 'SiropController@index');
+// Route::get('sirops', 'SiropController@stockage')->name('sirops.stockage');
+
+
+
+
+// // Route::resource('/management/category',[\App\Http\Controllers\management\categoryController ::class, 'createCategory']);
+// Route::resource('/management/category',"\App\Http\Controllers\management\categoryController");
+
+
+// Auth::routes();
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
