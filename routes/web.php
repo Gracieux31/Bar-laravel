@@ -21,12 +21,12 @@ Route::get('/', function () {
 //     return view('management.index');
 // });
 
-Route::get('sirops', [FruitController::class, 'index']);
-Route::get('add-fruit', [FruitController::class, 'create']);
-Route::post('add-fruit', [FruitController::class, 'stockage']);
-Route::get('edit-student/{id}', [FruitController::class, 'edit']);
-Route::put('update-sirop/{id}', [FruitController::class, 'update']);
-Route::delete('delete-sirop/{id}', [FruitController::class, 'destroy']);
+Route::get('sirops', [SiropController::class, 'index']);
+Route::get('add-sirop', [SiropController::class, 'create']);
+Route::post('add-sirop', [SiropController::class, 'stockage']);
+Route::get('edit-student/{id}', [SiropController::class, 'edit']);
+Route::put('update-sirop/{id}', [SiropController::class, 'update']);
+Route::delete('delete-sirop/{id}', [SiropController::class, 'destroy']);
 // Route::get('sirops', 'SiropController@index');
 // Route::get('sirops', 'SiropController@stockage')->name('sirops.stockage');
 
