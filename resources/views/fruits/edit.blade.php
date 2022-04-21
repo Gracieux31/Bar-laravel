@@ -13,7 +13,7 @@
             <div class="edit-section">
                 <div class="card-header">
                     <h4>Edit Student with IMAGE
-                        <a href="{{ url('fruits') }}">BACK</a>
+                        <a href="{{ url('fruits') }}" class="btn float-end">BACK</a>
                     </h4>
                 </div>
                 <div class="card-body">

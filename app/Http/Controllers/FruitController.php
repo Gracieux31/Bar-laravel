@@ -77,7 +77,7 @@ class FruitController extends Controller
             File::delete($destination);
         }
         $fruit->delete();
-        return redirect()->back()->with('status','Successfully Added');
+        return redirect()->back()->with('status','Successfully Deleted');
     }
 }
 
