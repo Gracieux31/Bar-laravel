@@ -8,7 +8,7 @@
 			<div class="card">
 				<div class="card-header">
 					<h4> Fruits pour cocktails
-						<a href="{{ url('add-fruit') }}" class="btn btn-primary float-end">Add Fruits</a>
+						<a href="{{ url('add-fruit') }}" class="btn float-end">Add Fruits</a>
 					</h4>
 				</div>
 				<div class="card-body">
@@ -33,13 +33,13 @@
 									<img src="{{ asset('uploads/fruits/'.$item->fruit_image) }}" width="70px" height="70px" alt="Image">
 								</td>
 								<td>
-									<a href="{{ url('edit-fruit/'.$item->id) }}" class="btn btn-primary btn-sm">Edit</a>
+									<a href="{{ url('edit-fruit/'.$item->id) }}">Edit</a>
 								</td>
 								<td>
 									<form action="{{ url('delete-fruit/'.$item->id) }}" method="POST">
 										@csrf
 										@method('DELETE')
-										<button type="submit" class="btn btn-danger btn-sm">Delete</button>
+										<button type="submit">Delete</button>
 									</form>
 								</td>
 							</tr>

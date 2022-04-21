@@ -13,7 +13,7 @@
 			<div class="card">
 				<div class="card-header">
 					<h4> Ajouter des fruits
-					<a href="{{ url('fruits') }}" class="btn btn-primary float-end">retour</a>
+					<a href="{{ url('fruits') }}" class="btn float-end">Retour</a>
 					</h4>
 				</div>
 				<div class="card-body">
@@ -21,16 +21,16 @@
 					<form action="{{ url('add-fruit') }}" method="POST" enctype="multipart/form-data">
 						@csrf
 
-						<div class="form-groupe mb-3">
+						<div class="form-groupe mb-4">
 							<label for="">Fruit Name</label>
 							<input type="text" name="name" class="form-control">
 						</div>
-						<div class="form-groupe mb-3">
+						<div class="form-groupe mb-4">
 							<label for="">Fruit Image</label>
 							<input type="file" name="fruit_image" class="form-control">
 						</div>
-						<div class="form-groupe mb-3">
-							<button type="submit" class="btn btn-primary">Save Fruits</button>
+						<div class="form-groupe mb-5">
+							<button type="submit">Save Fruits</button>
 						</div>
 					</form>
 				</div>
