@@ -14,7 +14,11 @@ class CreateMenuModelsTable extends Migration
     public function up()
     {
         Schema::create('menu_models', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+            $table->string('name');
+            $table->string('image');
+            $table->text('description'); 
+            $table->integer('cat_id');
             $table->timestamps();
         });
     }

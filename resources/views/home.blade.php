@@ -23,12 +23,12 @@
                         <div class="col-sm-4">
                             <a href="/cashier">
                             <img src="{{asset('image/cash.png')}}" height="100" width="100">
-                            Cashier</a>
+                            Caisse</a>
                       </div>
                       <div class="col-sm-4">
                         <a href="/report">
                         <img src="{{asset('image/report.png')}}" height="100" width="100">
-                        Report</a>
+                        Rapport</a>
                   </div>
                     </div>
 

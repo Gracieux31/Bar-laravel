@@ -28,6 +28,7 @@ Route::resource('/management/category',"\App\Http\Controllers\management\categor
 
 Route::resource('/management/menu',"\App\Http\Controllers\management\menuController");
 
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -27,8 +27,8 @@
 
                         <form action="/management/category" method='POST'>
                             @csrf
-                            <label for="">Nouveau Catégories</label>
-                            <input type="text" class='form-control' name='cat'>
+                            <label class="p-2" for="">Nouveau Catégories</label>
+                            <input type="text" class='form-control' name='cat'> <br/>
                             <input type="submit" class="btn btn-danger">
                         </form>
 

@@ -5,7 +5,6 @@ namespace App\Http\Controllers\management;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\categoryModel;
-use Illuminate\Support\Facades\DB;
 
 class categoryController extends Controller
 {
@@ -16,8 +15,6 @@ class categoryController extends Controller
      */
     public function index()
     {
-        
-       
         
         //$categories = categoryModel :: all();
         $categories = categoryModel::paginate(4);
@@ -56,9 +53,6 @@ class categoryController extends Controller
 
        // $categories = categoryModel::paginate(4);
         return redirect('/management/category');
-
-        
-
     }
 
     /**

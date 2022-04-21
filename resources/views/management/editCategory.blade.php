@@ -24,13 +24,13 @@
                             </div>
                         
                         @endforeach
-
+                            
                         <form action="/management/category/{{$category_edit->id}}" method='POST'>
                             @csrf
                             @method('PUT')
-                            <label for="">Editer la Catégories</label>
-                            <input type="text" class='form-control' value='{{$category_edit->name}}' name='cat'>
-                            <input type="submit" class="btn btn-danger" value="update">
+                            <label class="p-2" for="">Editer la Catégories</label>
+                            <input type="text" class='form-control' value='{{$category_edit->name}}' name='cat'> <br>
+                            <input type="submit" class="btn btn-danger " value="update">
                         </form>
 
                     </div>
